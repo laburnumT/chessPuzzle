@@ -72,21 +72,22 @@ void update()
   textSize(20);
   textAlign(CORNER, CORNER);
 
-
-  if (keyLocation != -1)
+  if (showKey)
   {
-    int toFlip = parity ^ keyLocation;
-    text("Parity of current board: " + parity + "\nIndex of key: " + keyLocation + 
-      "\nLocation to flip: " + toFlip, 10, height - 150);
+    if (keyLocation != -1)
+    {
+      int toFlip = parity ^ keyLocation;
+      text("Parity of current board: " + parity + "\nIndex of key: " + keyLocation + 
+        "\nLocation to flip: " + toFlip, 10, height - 150);
 
-    text("Binary value: " + binary(parity, 6) + "\nBinary value: " + binary(keyLocation, 6) + "\nBinary value: " + binary(toFlip, 6), 350, height - 150);
-  } else
-  {
-    text("Parity of current board: " + parity + "\nKey not placed", 10, height - 150);
-    text("Binary value: " + binary(parity, 6), 350, height - 150);
+      text("Binary value: " + binary(parity, 6) + "\nBinary value: " + binary(keyLocation, 6) + "\nBinary value: " + binary(toFlip, 6), 350, height - 150);
+    } else
+    {
+      text("Parity of current board: " + parity + "\nKey not placed", 10, height - 150);
+      text("Binary value: " + binary(parity, 6), 350, height - 150);
+    }
   }
 }
-
 
 //char[] toFlip(String current, String goal)
 //{
