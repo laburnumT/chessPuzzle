@@ -56,7 +56,7 @@ class Board
     int par = 0;
     for (int i = 0; i < arr.length; i += 1)
     {
-      par += pow(2, i) * arr[i];
+      par += pow(2, i) * arr[5 - i];
     }
     //println(arr);
     return par;
@@ -75,7 +75,7 @@ class Board
       squares[index].value = 0;
     }
     parityValue = calculateParity();
-    println(parityValue);
+    //println(parityValue);
   }
 
   void placeKey(int x, int y)
@@ -90,4 +90,14 @@ class Board
     squares[index].containsKey = true;
     containsKeyIndex = index;
   }
+
+  void resetKey()
+  {
+    if (containsKeyIndex != -1)
+    {
+      squares[containsKeyIndex].containsKey = false;
+    }
+    containsKeyIndex = -1;
+  }
+  //int
 }

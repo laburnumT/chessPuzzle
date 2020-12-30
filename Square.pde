@@ -6,6 +6,7 @@ class Square
   int value;
   String label;
   boolean containsKey;
+  int index;
   Square(int x, int y, int s, int c, int v, int i)
   {
     pos = new PVector(x, y);
@@ -13,6 +14,7 @@ class Square
     colour = c;
     value = v;
     label = binary(i, 6);
+    index = i;
     containsKey = false;
   }
 
@@ -31,5 +33,7 @@ class Square
     textAlign(CENTER, CENTER);
     fill((colour - 255) * -1);
     text(value, pos.x + size / 2, pos.y + size / 2);
+    textSize(size / 8);
+    text(index, pos.x + size / 8, pos.y + size / 8);
   }
 }
