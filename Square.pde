@@ -7,7 +7,8 @@ class Square
   String label;
   boolean containsKey;
   int index;
-  Square(int x, int y, int s, int c, int v, int i)
+
+  public Square(int x, int y, int s, int c, int v, int i)
   {
     pos = new PVector(x, y);
     size = s;
@@ -18,15 +19,12 @@ class Square
     containsKey = false;
   }
 
-  void show()
+  public void show()
   {
     if (!containsKey || !showKey)
-    {
       fill(colour);
-    } else
-    {
+    else
       fill(255, 0, 0);
-    }
 
     rect(pos.x, pos.y, size, size);
     textSize(size / 2);
